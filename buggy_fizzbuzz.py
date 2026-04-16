@@ -1,17 +1,15 @@
 # buggy_fizzbuzz.py
-# Contains intentional bugs for AI code testing demos
+# Contains intentional bugs for AI code testing demos — now fixed
 
 def fizzbuzz(n):
     results = []
     for i in range(1, n + 1):
-        # BUG: individual checks come before the combined check,
-        # so "FizzBuzz" is never reached — it prints "Fizz" or "Buzz" instead
-        if i % 3 == 0:
+        if i % 15 == 0:
+            results.append("FizzBuzz")
+        elif i % 3 == 0:
             results.append("Fizz")
         elif i % 5 == 0:
             results.append("Buzz")
-        elif i % 15 == 0:
-            results.append("FizzBuzz")  # dead code — never reached
         else:
             results.append(str(i))
     return results
